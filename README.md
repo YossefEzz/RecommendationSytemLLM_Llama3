@@ -76,17 +76,17 @@ Briefly describe the structure of your project.
 
 
 Recommend_Sys/
-├── data/               # Data files
-├── models/             # Machine learning models
-├── src/                # Source code
-│   ├── components/     # Flask components
-│   ├── services/       # Services and utilities
-│   └── app.py          # Main application file
-├── tests/              # Unit tests
-├── app/utils.py        # Utility functions
-├── requirements.txt    # Project dependencies
-├── .gitignore          # Git ignore file
-└── README.md           # Project README
+├── data/           # Data files
+├── models/         # Machine learning models
+├── src/            # Source code
+│   ├── components/ # Flask components
+│   ├── services/   # Services and utilities
+│   └── app.py      # Main application file
+├── tests/          # Unit tests
+├── app/utils.py    # Utility functions
+├── requirements.txt# Project dependencies
+├── .gitignore      # Git ignore file
+└── README.md       # This file
 
 
 ## Workflow
