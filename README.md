@@ -72,9 +72,9 @@ here\
 
 ## Project Structure
 
-Briefly describe the structure of your project. For example:
+Briefly describe the structure of your project. 
 
-\\\
+
 Recommend_Sys/
 ├── data/               # Data files
 ├── models/             # Machine learning models
@@ -87,7 +87,7 @@ Recommend_Sys/
 ├── requirements.txt    # Project dependencies
 ├── .gitignore          # Git ignore file
 └── README.md           # Project README
-\\\
+
 
 ## Workflow
 
@@ -108,7 +108,7 @@ Recommend_Sys/
 
 The output of the recommendation system is a list of movie titles that are most similar to the user's favorite movie description.
 
-![Screenshot of Front End](path_to_screenshot)
+
 
 ## Contributing
 
@@ -133,7 +133,4 @@ We welcome contributions! Follow these steps to contribute:
 
 6. Open a pull request on GitHub.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
