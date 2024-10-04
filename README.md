@@ -103,11 +103,14 @@ Recommend_Sys/
 1. **Data Preparation**: Prepare the dataset with relevant movie information.
 2. **Embedding Model**: Use a pre-trained language model (e.g., LLaMA) to generate embeddings for the movie descriptions.
 3. **Indexing**: Index the embeddings using FAISS for efficient similarity search.
-4. **Evaluation**: Evaluate the recommendation system using metrics like precision, recall, and F1-score.
+
 
 ## Output
 
 The output of the recommendation system is a list of movie titles that are most similar to the user's favorite movie description.
+![image](https://github.com/user-attachments/assets/23839568-f33f-4cc1-8bdd-5ae4c709e531)
+
+![image](https://github.com/user-attachments/assets/ef1a84a9-1df0-445c-9adf-587c99d37510)
 
 
 
