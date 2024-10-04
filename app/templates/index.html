@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommendation System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Movie Recommendation System</h1>
+    <form id="recommendationForm">
+        <label for="favoriteText">Favorite Movie Description:</label><br>
+        <textarea id="favoriteText" name="favoriteText" rows="4" cols="50"></textarea><br><br>
+        <label for="numSuggestions">Number of Suggestions:</label><br>
+        <input type="number" id="numSuggestions" name="numSuggestions" value="5"><br><br>
+        <input type="submit" value="Get Recommendations">
+    </form>
+    <h2>Recommendations:</h2>
+    <ul id="recommendationsList"></ul>
+
+    <script>
+        document.getElementById('recommendationForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const favoriteText = document.getElementById('favoriteText').value;
+            const numSuggestions = document.getElementById('numSuggestions').value;
+
+            fetch('/suggest', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    favorite_text: favoriteText,
+                    num_suggestions: numSuggestions
+                })
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                const recommendationsList = document.getElementById('recommendationsList');
+                recommendationsList.innerHTML = '';
+                data.forEach(movie => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `<strong>Title:</strong> ${movie.title}<br>
+                                    <strong>Director:</strong> ${movie.director}<br>
+                                    <strong>Cast:</strong> ${movie.cast}<br>
+                                    <strong>Description:</strong> ${movie.description}`;
+                    recommendationsList.appendChild(li);
+                });
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>
