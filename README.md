@@ -1,75 +1,70 @@
-<<<<<<< HEAD
-# Rec_Sys_LLama3.2
-=======
-# Movie Recommendation System
+# Recommend_Sys
 
-## Setup
+Recommend_Sys is a recommendation system designed to provide movie suggestions based on user preferences using machine learning models.
+
+## Table of Contents
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
+- [Workflow](#workflow)
+- [Training Process](#training-process)
+- [Output](#output)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Installation
+
+Follow these steps to set up the project locally:
 
 1. Clone the repository:
-    \\\sh
-    git clone https://github.com/yourusername/my_project.git
-    cd my_project
-    \\\
+    ```bash
+    git clone https://github.com/YossefEzz/RecommendationSytemLLM_Llama3.git
+    ```
 
-2. Install dependencies:
-    \\\sh
+2. Navigate to the project directory:
+    ```bash
+    cd Recommend_Sys
+    ```
+
+3. Create a virtual environment and activate it:
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+    ```
+
+4. Install the dependencies:
+    ```bash
     pip install -r requirements.txt
-    \\\
+    ```
 
-3. Run the application:
-    \\\sh
-    python -m app
-    \\\
+## Usage
 
-## Docker Setup
+Here are some instructions and examples for using the project:
 
-1. Build the Docker image:
-    \\\sh
-    docker build -t movie-recommendation-system .
-    \\\
+1. Start the Flask application:
+    ```bash
+    flask run
+    ```
 
-2. Run the Docker container:
-    \\\sh
-    docker run -p 8000:8000 movie-recommendation-system
-    \\\
+2. Open your browser and navigate to `http://localhost:5000` to see the application in action.
 
-## Running Tests
+3. To get movie suggestions, you can use the `get_movie_suggestions` function from `utils.py`:
+    ```python
+    from utils import get_movie_suggestions
+    import pandas as pd
+    import faiss
 
-1. Run the tests:
-    \\\sh
-    python -m unittest discover tests
-    \\\
+    # Load your data and index
+    df = pd.read_csv('path_to_your_data.csv')
+    index = faiss.read_index('path_to_your_index')
 
-## API Endpoints
+    # Get suggestions
+    favorite_text = "Your favorite movie description here"
+    suggestions = get_movie_suggestions(favorite_text, 5, df, index)
+    print(suggestions)
+    ```
 
-### POST /suggest
+## Project Structure
 
-Request:
-\\\json
-{
-    "favorite_text": "Some favorite movie description",
-    "num_suggestions": 5
-}
-\\\
-
-Response:
-\\\json
-[
-    "Movie Title 1",
-    "Movie Title 2",
-    ...
-]
-\\\
-"@
-
-# Create .gitignore
-New-Item -ItemType File -Path ".gitignore" -Value @"
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-.env
-*.env
-data/index
->>>>>>> master
-# RecommendationSytemLLM_Llama3
+Briefly describe the structure of your project. For example:
