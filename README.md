@@ -75,7 +75,6 @@ here\
 Briefly describe the structure of your project. 
 
 
-Recommend_Sys/
 ```
 Recommend_Sys/
 ├── data/           # Data files
